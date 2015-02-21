@@ -25,70 +25,61 @@
 	</div>
 @endif
 
+<div class="container">
+    <h4 id="howWeWork">Sign in or create a new account to move forward.</h4>
+</div>
+
 <div id="signUp" >
     <div class="row">
         <div class="container" id="contactForm" >
             <div class="row form-container">
+                <div class="s12 m6 offset-m3 col">
                 <div id="signUpForm">
-                    <div id="signUpFormTitle"><h4>Sign Up!</h4></div>
-                    <form action="/auth/login" method="POST" id="">
-                    	<input type="hidden" name="_token" value="{{csrf_token()}}">
-                        <div class="row">
-                            <div class="col s6">
-                                <div id="oldUser" >
-                                    <div id="signUpFormTitle"><h5>Existing User</h5></div>
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <input id="username" type="text" name="username" class="validate" value="{{old('username')}}">
-                                            <label for="username">Username</label>
+                    <div id="signUpFormTitle">
+                        <div class="user-form-toggle s6 col offset-s3">
+                                <div class="switch">
+                                    <label>
+                                        Sign In
+                                        <input id="formChange" type="checkbox">
+                                        <span class="lever"></span>
+                                        Register!
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <form action="/auth/login" method="POST" class="sign-up-form">
+                            <div class="row">
+                                <div class="col s12">
+                                    <div id="oldUser" >
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input id="username" type="text" class="validate">
+                                                <label for="username">Username</label>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <input id="password" type="password" name="password" class="validate">
-                                            <label for="password">Password</label>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input id="password" type="password" class="validate">
+                                                <label for="password">Password</label>
+                                            </div>
                                         </div>
+                                        <div class="row email-register">
+                                            <div class="input-field col s12">
+                                                <input id="email" type="email" class="validate">
+                                                <label for="email">Email Address</label>
+                                            </div>
+                                        </div>
+                                        <button id="signUpBtn" class="btn waves-effect waves-light right" type="submit" name="action">Sign-in
+                                        </button>
                                     </div>
-                                    <button class="btn waves-effect waves-light right" type="submit" name="action">Sign-in
-                                    </button>
                                 </div>
                             </div>
                         </form>
-                        <form method="post" action="/auth/register">
-                        	<input type="hidden" name="_token" value="{{csrf_token()}}">
-                            <div class="vdivider"></div>
+                    </div>
 
-                            <div class="col s6" >
-                                <div id="newUser">
-                                    <div id="signUpFormTitle"><h5>New User</h5></div>
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <input id="username" type="text" name="username" class="validate"  value="{{old('username')}}">
-                                            <label for="username">Username</label>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <input id="password" type="password" name="password" class="validate">
-                                            <label for="password">Password</label>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <input id="email" type="email" name="email" class="validate"  value="{{old('email')}}">
-                                            <label for="email">Email</label>
-                                        </div>
-                                    </div>
-                                    <button class="btn waves-effect waves-light right" type="submit" name="action">Register
-                                    </button>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </form>
                 </div>
-                <div class="dope-shadow"></div>
             </div>
         </div>
     </div>

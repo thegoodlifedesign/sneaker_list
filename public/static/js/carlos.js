@@ -3,6 +3,7 @@ $(function () {
     responsiveFont();
     responsiveShadow("#checkOutForm", ".form-container");
     responsiveShadow("#signUpForm", ".form-container");
+    formChange();
 });
 
 $(window).resize(function () {
@@ -22,7 +23,7 @@ $(window).bind('resizeEnd', function () {
 var slider = {
     slideShoe: function (time, width) {
 
-        $("#shoeSliderImg1").animate({width: width + 'px'}, time);
+        $("#shoeSliderImg1").animate({width: width + 1 + 'px'}, time);
 
         $("#shoeSliderImg2").animate({left: width + 'px'}, time);
 
@@ -34,7 +35,7 @@ var slider = {
 
     slideShow: function (id, id2, img, img2, img3) {
         setTimeout(function () {
-            slider.slideShoe(2000, 600)
+            slider.slideShoe(2000, 599)
         }, 500);
         setTimeout(function () {
             slider.imageChange(id, img);
@@ -96,6 +97,8 @@ function responsiveFont() {
 }
 
 
+
+
 $(function () {
 
     $("#typeStyle").typed({
@@ -144,6 +147,28 @@ function responsiveShadow(innerDiv, outterDiv) {
 }
 
 
+
+function formChange() {
+
+
+    $("#formChange").click(function(){
+        if($("#formChange").is(':checked'))
+        {
+            $(".sign-up-form").attr("action", "/auth/register");
+            $('.email-register').fadeIn();
+            $("#signUpBtn").text("REGISTER");
+        }
+        else
+        {
+            $(".sign-up-form").attr("action", "/auth/login");
+            $('.email-register').fadeOut();
+            $("#signUpBtn").text("SIGN-IN");
+        }
+    });
+
+
+
+}
 
 
 

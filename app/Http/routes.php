@@ -4,9 +4,10 @@
  * PAGES
  */
 $router->get('/', ['as' => 'home', 'uses' => 'PagesController@getHome']);
-$router->get('/contact', ['as' => 'home', 'uses' => 'PagesController@getContact']);
-$router->get('/how-it-works', ['as' => 'home', 'uses' => 'PagesController@getHowItWorks']);
-$router->get('/blog', ['as' => 'home', 'uses' => 'PagesController@getBlog']);
+$router->get('/contact', ['as' => 'contact', 'uses' => 'PagesController@getContact']);
+$router->get('/how-it-works', ['as' => 'how.it.works', 'uses' => 'PagesController@getHowItWorks']);
+$router->get('/blog', ['as' => 'blog', 'uses' => 'PagesController@getBlog']);
+$router->get('/gallery', ['as' => 'gallery', 'uses' => 'PagesController@getGallery']);
 
 /*
  * SHOE REQUEST

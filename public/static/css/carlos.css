@@ -15,7 +15,9 @@
 
 }
 
-
+#logo {
+    padding: 16px 25px;
+}
 
 .list-header-nav {
     list-style-type: none;
@@ -160,6 +162,10 @@
     margin: 0 auto 3% auto;
 }
 
+footer{
+    width: 100% !important;
+}
+
 /****************************************/
 /* Our Clients */
 /****************************************/
@@ -170,6 +176,7 @@
     background-image: -ms-linear-gradient(bottom, #FFFFFF 0%, #E0E0E0 100%);
     background-image: linear-gradient(to bottom, #FFFFFF 0%, #E0E0E0 100%);
     margin-top: 5%;
+    width: 100%;
 }
 #clientsTitle {
     text-align: center;
@@ -674,12 +681,16 @@
 }
 
 #foundSold {
-    background: url(../img/foundandsoldbg.png) no-repeat center;
-    width: 105%;
-    height: 900px;
+    background: url(../img/foundandsoldbg.jpg) no-repeat center;
+    width: 100%;
+    height: 665px;
     background-size: cover;
     margin-top: -1%;
 
+}
+
+.found-shoes {
+    margin-top: 6%;
 }
 
 /****************************************/
@@ -687,12 +698,13 @@
 /****************************************/
 #shoeSliderImg1 {
     width: 0;
+    margin-left: -1px;
     overflow: hidden;
     position: absolute;
 }
 
 #shoeSliderImg2 {
-    margin-left: 601px;
+    margin-left: 651px;
     width: 600px;
     left: 0;
     overflow: hidden;
@@ -755,10 +767,10 @@
 
 #contactUs {
     background: url(../img/BG-Contact.jpg) no-repeat center;
-    width: 105%;
+    width: 100%;
     height: 900px;
-    background-size: cover;
     margin-top: -1%;
+    background-size: cover;
 
 }
 
@@ -771,20 +783,9 @@
     margin-top: -75px;
     background-size: 126% !important;
     background-position-x: center !important;
-    background-position-y: -241px !important;
+    background-position-y: -249px !important;
     width: 100%;
-    background: url(../img/contact-banner.png) no-repeat;
-    overflow: hidden;
-}
-
-#shoeRequestTop{
-    height: 575px;
-    margin-top: -75px;
-    background-size: 126% !important;
-    background-position-x: center !important;
-    background-position-y: -271px !important;
-    width: 100%;
-    background: url(../img/request-banner.png) no-repeat;
+    background: url(../img/sneaker-banner-3.jpg) no-repeat;
     overflow: hidden;
 }
 
@@ -795,6 +796,9 @@
     margin-top: 180px;
     text-align: center;
     color: #FFF;
+}
+footer{
+    margin-top: 0 !important;
 }
 
 #contactPageTitle .title-tag-line {
@@ -815,9 +819,9 @@
     margin-top: -75px;
     background-size: 126% !important;
     background-position-x: center !important;
-    background-position-y: -60px !important;
+    background-position-y: -250px !important;
     width: 100%;
-    background: url(../img/sneaker-banner.jpg) no-repeat;
+    background: url(../img/sneaker-banner-4.jpg) no-repeat;
     overflow: hidden;
 }
 
@@ -837,14 +841,40 @@
 #checkOutForm {
     width: 76%;
     margin-left: 12%;
-    padding: 1% 5% 6% 5%;
-    height: 100%;
+    padding: 1% 5% 15% 5%;
+    height: 750px;
     background: #EDEDED;
     border-radius: 10px;
     margin-top: 50px;
-    border-top: solid 6px #EC1D24;
+    border-top: solid 6px #ec1d24;
     border-left: solid 1px #E0E0E0;
     border-bottom: double 6px #E0E0E0;
+}
+
+.row .form-container {
+    margin-bottom: 8%;
+}
+
+.container #howWeWork {
+    margin: 8% 0 3% 0;
+    color: #9c9d9c;
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif !important;
+    text-align: center;
+}
+
+.container #howWeWork u {
+    color: #5c92ec;
+}
+
+.container #disclaimer span {
+    font-weight: 600 !important;
+}
+.container #disclaimer {
+    color: #9c9d9c;
+    margin: 0 0 8% 0;
+    font-family: 'Open Sans', sans-serif !important;
+    text-align: center;
 }
 
 .dope-shadow{
@@ -867,8 +897,14 @@
     margin-bottom: 3%;
 }
 
+#checkOutForm form button{
+    margin-top: 4%;
+}
+
+
+
 /****************************************/
-/* Checkout Page */
+/* Sign Up Page */
 /****************************************/
 
 #signUpTop {
@@ -876,9 +912,9 @@
     margin-top: -75px;
     background-size: 126% !important;
     background-position-x: center !important;
-    background-position-y: -60px !important;
+    background-position-y: -230px !important;
     width: 100%;
-    background: url(../img/sneaker-banner.jpg) no-repeat;
+    background: url(../img/sneaker-banner-5.jpg) no-repeat;
     overflow: hidden;
 }
 
@@ -896,9 +932,7 @@
 }
 
 #signUpForm {
-    width: 76%;
-    margin-left: 12%;
-    padding: 1% 5% 6% 3%;
+    padding: 1% 1% 3% 3%;
     height: 100%;
     background: #EDEDED;
     border-radius: 10px;
@@ -906,6 +940,10 @@
     border-top: solid 6px #EC1D24;
     border-left: solid 1px #E0E0E0;
     border-bottom: double 6px #E0E0E0;
+}
+
+#signUpBtn {
+    margin-top: 5% ;
 }
 
 .dope-shadow{
@@ -923,7 +961,8 @@
 #signUpFormTitle h4{
     text-align: center;
     font-family: 'Open Sans', sans-serif !important;
-    font-weight: 400;
+    font-weight: 300;
+    font-size: 40px;
     color: #b3b3b3;
     margin-bottom: 5%;
 }
@@ -953,6 +992,95 @@
     padding: 5% 0 0 12%;
 }
 
+/****************************************/
+/* Gallery Page */
+/****************************************/
+.container.gallery {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.user-form-toggle {
+    margin-top: 8%;
+}
+
+.hide{
+    display: none;
+}
+
+.user-form-toggle div label{
+    height: 14px;
+    line-height: 14px;
+    font-size: 24px;
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 300;
+}
+.card:hover {
+    -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#galleryTop {
+    height: 575px;
+    margin-top: -75px;
+    background-size: 126% !important;
+    background-position-x: center !important;
+    background-position-y: -185px !important;
+    width: 100%;
+    background: url(../img/sneaker-banner-2.jpg) no-repeat;
+    overflow: hidden;
+}
+
+#galleryPageTitle h1 {
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 300;
+    font-size: 4rem;
+    margin-top: 180px;
+    text-align: center;
+    color: #FFF;
+}
+
+#galleryPageTitle .title-tag-line {
+    color: #FFF !important;
+}
+
+#galleryForm {
+    width: 76%;
+    margin-left: 12%;
+    padding: 1% 5% 6% 3%;
+    height: 100%;
+    background: #EDEDED;
+    border-radius: 10px;
+    margin-top: 50px;
+    border-top: solid 6px #EC1D24;
+    border-left: solid 1px #E0E0E0;
+    border-bottom: double 6px #E0E0E0;
+}
+
+.email-register{
+    display: none;
+}
+
+
+#shoeRequestForm {
+    width: 76%;
+    margin-left: 12%;
+    padding: 1% 5% 15% 5%;
+    height: 635px;
+    background: #EDEDED;
+    border-radius: 10px;
+    margin-top: 50px;
+    border-top: solid 6px #ec1d24;
+    border-left: solid 1px #E0E0E0;
+    border-bottom: double 6px #E0E0E0;
+}
+
+.Request-price {
+    color: #FF4B4B;
+    font-size: 24px;
+    margin: 0px 14px 0 0;
+}
 
 
 

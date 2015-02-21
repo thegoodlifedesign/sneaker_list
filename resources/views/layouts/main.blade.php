@@ -19,6 +19,7 @@
          <ul id="nav-mobile" class="right hide-on-med-and-down">
            <li><a href="/shoe-request">Shoe Request</a></li>
            <li><a href="http://contourbeta.com/sneaker-list/1054-2/">How It Works</a></li>
+           <li><a href="/gallery">Gallery</a></li>
            <li><a href="/contact">Contact Us</a></li>
            @if(Auth::check())
             <li><a href="/{{Auth::user()->slug}}/orders">Orders</a></li>
@@ -43,16 +44,22 @@
               <div class="container">
                 <div class="row">
                   <div class="col l6 s12">
-                    <h5 class="white-text">Footer Content</h5>
-                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                    <h5 class="white-text">The Sneaker List</h5>
+                    <p class="grey-text text-lighten-4">Want.Request.Receive</p>
                   </div>
                   <div class="col l4 offset-l2 s12">
                     <h5 class="white-text">Links</h5>
                     <ul>
-                      <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                      <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                      <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                      <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                      <li><a href="/shoe-request">Shoe Request</a></li>
+                                 <li><a href="http://contourbeta.com/sneaker-list/1054-2/">How It Works</a></li>
+                                 <li><a href="/gallery">Gallery</a></li>
+                                 <li><a href="/contact">Contact Us</a></li>
+                                 @if(Auth::check())
+                                  <li><a href="/{{Auth::user()->slug}}/orders">Orders</a></li>
+                                  <li><a href="/auth/logout">Logout</a></li>
+                                 @else
+                                  <li><a href="/auth/sign-up">Sign Up</a></li>
+                                 @endif
                     </ul>
                   </div>
                 </div>
