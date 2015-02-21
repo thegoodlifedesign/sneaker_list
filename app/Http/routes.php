@@ -36,10 +36,12 @@ $router->post('/auth/login', ['as' => 'login', 'uses' => 'Auth\AuthController@po
 /*
  * ADMIN
  */
-$router->group(['middleware' => 'admin'], function($router){
-    $router->get('/admin/order/{order_number}', ['as' => 'admin.order', 'uses' => 'OrderController@getAdminOrder']);
-    $router->post('/admin/order/add-price', ['as' => 'add.order.price', 'uses' => 'OrderController@postAddPrice']);
-    $router->get('/admin/orders', ['as' => 'admin.orders', 'uses' => 'OrderController@getAdminOrders']);
+$router->group(['middleware' => 'auth'], function($router){
+    $router->group(['middleware' => 'admin'], function($router){
+        $router->get('/admin/order/{order_number}', ['as' => 'admin.order', 'uses' => 'OrderController@getAdminOrder']);
+        $router->post('/admin/order/add-price', ['as' => 'add.order.price', 'uses' => 'OrderController@postAddPrice']);
+        $router->get('/admin/orders', ['as' => 'admin.orders', 'uses' => 'OrderController@getAdminOrders']);
+    });
 });
 /*
  * USER

@@ -98,13 +98,13 @@ class OrderController extends Controller
             // Create the charge on Stripe's servers - this will charge the user's card
             try {
                 $charge = Charge::create(array(
-                        "amount" => 99, // amount in cents, again
+                        "amount" => 50, // amount in cents, again
                         "currency" => "usd",
                         "source" => $token,
                         "description" => "Shoe request")
                 );
 
-                $this->dispatchFrom('TGL\Commands\CommandsShoeRequestCheckoutCommand', $request);
+                $this->dispatchFrom('TGL\Commands\ShoeRequestCheckoutCommand', $request);
 
                 //Flash::message('Thank You!');
 
@@ -206,6 +206,25 @@ class OrderController extends Controller
      */
     public function postAcceptOrder(AcceptOrderRequest $request)
     {
+        // Set your secret key: remember to change this to your live secret key in production
+        // See your keys here https://dashboard.stripe.com/account
+        \Stripe\Stripe::setApiKey("sk_test_Z2LsF02j45JewItD81kYfLpt");
+
+        // Get the credit card details submitted by the form
+        $token = $_POST['stripeToken'];
+
+        // Create the charge on Stripe's servers - this will charge the user's card
+        try {
+            $charge = \Stripe\Charge::create(array(
+                    "amount" => $request->price, // amount in cents, again
+                    "currency" => "usd",
+                    "source" => $token,
+                    "description" => "payment for shoe")
+            );
+        } catch(\Stripe\Error\Card $e) {
+            // The card has been declined
+        }
+
         $input = $request->all();
 
         $this->orderService->acceptOrder($input['order_number']);

@@ -67,12 +67,13 @@
                                                 <form action="/{{Auth::user()->slug}}/order/accept-order" method="POST">
                                                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                                                     <input type="hidden" name="order_number" value="{{$order->order_number}}">
+                                                    <input type="hidden" name="price" value="{{$price}}">
                                                   <script
                                                       src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                                                       data-key="pk_test_W1r9jEKs1xdjHjm24kcncrLj"
                                                       data-amount="{{$price}}"
-                                                      data-name="Demo Site"
-                                                      data-description="2 widgets ($20.00)"
+                                                      data-name="The Sneaker List"
+                                                      data-description="{{$order->brand}}, {{$order->model}}"
                                                       data-image="/128x128.png">
                                                     </script>
                                                 </form>
