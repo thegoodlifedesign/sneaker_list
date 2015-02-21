@@ -88,7 +88,7 @@ class OrderController extends Controller
     {
         // Set your secret key: remember to change this to your live secret key in production
         // See your keys here https://dashboard.stripe.com/account
-        Stripe::setApiKey("sk_test_Z2LsF02j45JewItD81kYfLpt");
+        Stripe::setApiKey("sk_live_lsHmeNMRPEBiobXbLEfRIDto");
 
         // Get the credit card details submitted by the form
         $token = $_POST['stripeToken'];
@@ -208,7 +208,7 @@ class OrderController extends Controller
     {
         // Set your secret key: remember to change this to your live secret key in production
         // See your keys here https://dashboard.stripe.com/account
-        \Stripe\Stripe::setApiKey("sk_test_Z2LsF02j45JewItD81kYfLpt");
+        \Stripe\Stripe::setApiKey("sk_live_lsHmeNMRPEBiobXbLEfRIDto");
 
         // Get the credit card details submitted by the form
         $token = $_POST['stripeToken'];

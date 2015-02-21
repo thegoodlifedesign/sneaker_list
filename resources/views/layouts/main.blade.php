@@ -82,7 +82,7 @@
 
     <script type="text/javascript">
       // This identifies your website in the createToken call below
-      Stripe.setPublishableKey('pk_test_W1r9jEKs1xdjHjm24kcncrLj');
+      Stripe.setPublishableKey('pk_live_qk5xeN9lts3hKtA9Rg1Nzjdw');
       // ...
     </script>
     <script src="/static/js/shoe-request.js"></script>
