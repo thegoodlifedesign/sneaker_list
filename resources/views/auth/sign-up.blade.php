@@ -39,7 +39,7 @@
                                     <div id="signUpFormTitle"><h5>Existing User</h5></div>
                                     <div class="row">
                                         <div class="input-field col s12">
-                                            <input id="username" type="text" name="username" class="validate">
+                                            <input id="username" type="text" name="username" class="validate" value="{{old('username')}}">
                                             <label for="username">Username</label>
                                         </div>
                                     </div>
@@ -63,7 +63,7 @@
                                     <div id="signUpFormTitle"><h5>New User</h5></div>
                                     <div class="row">
                                         <div class="input-field col s12">
-                                            <input id="username" type="text" name="username" class="validate">
+                                            <input id="username" type="text" name="username" class="validate"  value="{{old('username')}}">
                                             <label for="username">Username</label>
                                         </div>
                                     </div>
@@ -75,7 +75,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="input-field col s12">
-                                            <input id="email" type="email" name="email" class="validate">
+                                            <input id="email" type="email" name="email" class="validate"  value="{{old('email')}}">
                                             <label for="email">Email</label>
                                         </div>
                                     </div>
