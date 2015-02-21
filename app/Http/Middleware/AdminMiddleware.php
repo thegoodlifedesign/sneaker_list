@@ -21,7 +21,6 @@ class AdminMiddleware
 	 */
 	public function handle($request, Closure $next)
 	{
-		dd($this->auth->user()->is_admin);
 		if ($this->auth->user()->is_admin != 1)
 		{
 			$this->auth->logout();

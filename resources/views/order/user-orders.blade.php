@@ -64,7 +64,7 @@
                                     <td>
                                         <div class="row">
                                             <div class="col s3">
-                                                <form action="/order/accept-order" method="POST">
+                                                <form action="/{{Auth::user()->slug}}/order/accept-order" method="POST">
                                                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                                                     <input type="hidden" name="order_number" value="{{$order->order_number}}">
                                                   <script
@@ -81,7 +81,7 @@
                                                 <a href="#"><button class="order-btn new-request-btn">New Request</button></a>
                                             </div>
                                             <div class="col s6">
-                                                <form method="post" action="/order/decline-order">
+                                                <form method="post" action="/{{Auth::user()->slug}}/order/decline-order">
                                                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                                                     <input type="hidden" name="order_number" value="{{$order->order_number}}">
                                                     <input type="submit" class="order-btn right decline-btn" value="Decline">

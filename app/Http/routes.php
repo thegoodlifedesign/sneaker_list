@@ -36,18 +36,18 @@ $router->post('/auth/login', ['as' => 'login', 'uses' => 'Auth\AuthController@po
 /*
  * ADMIN
  */
-$router->group(['middleware' => 'admin', 'middleware' => 'auth'], function($router){
+$router->group(['middleware' => 'admin'], function($router){
     $router->get('/admin/order/{order_number}', ['as' => 'admin.order', 'uses' => 'OrderController@getAdminOrder']);
     $router->post('/admin/order/add-price', ['as' => 'add.order.price', 'uses' => 'OrderController@postAddPrice']);
-    $router->post('/order/accept-order', ['as' => 'accept.order', 'uses' => 'OrderController@postAcceptOrder']);
-    $router->post('/order/decline-order', ['as' => 'decline.order', 'uses' => 'OrderController@postDeclineOrder']);
     $router->get('/admin/orders', ['as' => 'admin.orders', 'uses' => 'OrderController@getAdminOrders']);
 });
 /*
  * USER
  */
-$router->group(['middleware' => 'owner', 'middleware' => 'auth'], function($router){
+$router->group(['middleware' => 'owner'], function($router){
     $router->get('/{username}/order/{order_number}', ['as' => 'user.order', 'uses' => 'OrderController@getUserOrder']);
     $router->get('/{username}/orders', ['as' => 'user.orders', 'uses' => 'OrderController@getUserOrders']);
+    $router->post('/{username}/order/accept-order', ['as' => 'accept.order', 'uses' => 'OrderController@postAcceptOrder']);
+    $router->post('/{username}/order/decline-order', ['as' => 'decline.order', 'uses' => 'OrderController@postDeclineOrder']);
 });
 
