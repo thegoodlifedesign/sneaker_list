@@ -50,6 +50,7 @@
 
 
                         <form action="/auth/login" method="POST" class="sign-up-form">
+                            <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <div class="row">
                                 <div class="col s12">
                                     <div id="oldUser" >
