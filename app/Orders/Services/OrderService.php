@@ -34,7 +34,7 @@ class OrderService
 
     public function addPrice($order_number, $price)
     {
-        $this->orderRepo->addPrice($order_number, $price);
+        return $this->orderRepo->addPrice($order_number, $price);
     }
 
     public function acceptOrder($order_number)

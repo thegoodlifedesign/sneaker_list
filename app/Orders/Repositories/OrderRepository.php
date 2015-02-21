@@ -35,6 +35,8 @@ class OrderRepository
         $order->status_id = 2;
 
         $order->save();
+
+        return $order;
     }
 
     public function acceptOrder($order_number)

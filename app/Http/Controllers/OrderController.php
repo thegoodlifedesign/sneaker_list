@@ -6,6 +6,7 @@ use Stripe\Charge;
 use Stripe\Error\Card;
 use Stripe\Stripe;
 use TGL\Commands\ShoeRequestCheckoutCommand;
+use TGL\Events\OrderPriceWasSet;
 use TGL\Http\Requests\AcceptOrderRequest;
 use TGL\Http\Requests\AddOrderPriceRequest;
 use TGL\Http\Requests\DeclineOrderRequest;
@@ -95,23 +96,47 @@ class OrderController extends Controller
         // Get the credit card details submitted by the form
         $token = $_POST['stripeToken'];
 
-        // Create the charge on Stripe's servers - this will charge the user's card
-        try {
-            $charge = Charge::create(array(
-                   "amount" => 1400, // amount in cents, again
-                   "currency" => "usd",
-                   "source" => $token,
-                   "description" => "Shoe request")
-            );
+        if($_POST['coupon'] == 'sneaker-con')
+        {
+            // Create the charge on Stripe's servers - this will charge the user's card
+            try {
+                $charge = Charge::create(array(
+                        "amount" => 99, // amount in cents, again
+                        "currency" => "usd",
+                        "source" => $token,
+                        "description" => "Shoe request")
+                );
 
-            $this->dispatchFrom(ShoeRequestCheckoutCommand::class, $request);
+                $this->dispatchFrom('TGL\Commands\CommandsShoeRequestCheckoutCommand', $request);
 
-            //Flash::message('Thank You!');
+                //Flash::message('Thank You!');
 
-            return redirect()->to('/'.$this->auth->user()->slug.'/orders');
+                return redirect()->to('/'.$this->auth->user()->slug.'/orders');
 
-        } catch(Card $e) {
-            // The card has been declined
+            } catch(Card $e) {
+                // The card has been declined
+            }
+        }
+        else
+        {
+            // Create the charge on Stripe's servers - this will charge the user's card
+            try {
+                $charge = Charge::create(array(
+                        "amount" => 1400, // amount in cents, again
+                        "currency" => "usd",
+                        "source" => $token,
+                        "description" => "Shoe request")
+                );
+
+                $this->dispatchFrom('TGL\Commands\ShoeRequestCheckoutCommand', $request);
+
+                //Flash::message('Thank You!');
+
+                return redirect()->to('/'.$this->auth->user()->slug.'/orders');
+
+            } catch(Card $e) {
+                // The card has been declined
+            }
         }
     }
 
@@ -169,7 +194,9 @@ class OrderController extends Controller
     {
         $input = $request->all();
 
-        $this->orderService->addPrice($input['order_number'], $input['price']);
+        $order = $this->orderService->addPrice($input['order_number'], $input['price']);
+
+        event(new OrderPriceWasSet($order));
 
         //Flash::message('Price has been added');
 

@@ -82,8 +82,14 @@ if($user->full_name !== "")
                               </div>
                               <div class="input-field col s6">
                                   <input id="year" type="text" class="validate" data-stripe="exp-year">
-                                  <label for="year">Expiration Year</label>
+                                  <label for="year">Expiration Year(4 digits)</label>
                               </div>
+                          </div>
+                          <div class="row">
+                            <div class="input-field col s12">
+                                <input type="text" name="coupon" id="coupon">
+                                <label for="coupon">Coupon Code</label>
+                            </div>
                           </div>
                           <button class="btn waves-effect waves-light right" type="submit" name="action">Submit
                               <i class="mdi-content-send right"></i>
@@ -144,8 +150,14 @@ if($user->full_name !== "")
                               </div>
                               <div class="input-field col s6">
                                   <input id="year" type="text" class="validate" data-stripe="exp-year">
-                                  <label for="year">Expiration Year</label>
+                                  <label for="year">Expiration Year(4 digits)</label>
                               </div>
+                          </div>
+                          <div class="row">
+                            <div class="input-field col s12">
+                                <input type="text" name="coupon" id="coupon">
+                                <label for="coupon">Coupon Code</label>
+                            </div>
                           </div>
                           <button class="btn waves-effect waves-light right" type="submit" name="action">Submit
                               <i class="mdi-content-send right"></i>

@@ -47,7 +47,7 @@ class AuthController extends Controller {
 	 */
 	public function postRegister(RegisterRequest $request, Dispatcher $dispatcher)
 	{
-		$user = $this->dispatchFrom(UserRegisterCommand::class, $request);
+		$user = $this->dispatchFrom('TGL\Commands\UserRegisterCommand', $request);
 
 		$this->auth->login($user);
 

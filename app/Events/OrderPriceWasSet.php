@@ -3,6 +3,7 @@
 use TGL\Events\Event;
 
 use Illuminate\Queue\SerializesModels;
+use TGL\Orders\Entities\Order;
 
 class OrderPriceWasSet extends Event {
 
@@ -13,9 +14,9 @@ class OrderPriceWasSet extends Event {
 	 *
 	 * @return void
 	 */
-	public function __construct()
+	public function __construct(Order $order)
 	{
-		//
+		$this->order = $order;
 	}
 
 }
