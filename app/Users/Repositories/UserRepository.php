@@ -26,7 +26,7 @@ class UserRepository
 
     public function persist($user)
     {
-        $this->model->username = $user->username;
+        $this->model->username = strtolower($user->username);
         $this->model->email = $user->email;
         $this->model->password = Hash::make($user->password);
         $this->model->slug = $this->sluggify($user->username);
