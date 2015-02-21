@@ -8,6 +8,8 @@ $router->get('/contact', ['as' => 'contact', 'uses' => 'PagesController@getConta
 $router->get('/how-it-works', ['as' => 'how.it.works', 'uses' => 'PagesController@getHowItWorks']);
 $router->get('/blog', ['as' => 'blog', 'uses' => 'PagesController@getBlog']);
 $router->get('/gallery', ['as' => 'gallery', 'uses' => 'PagesController@getGallery']);
+$router->get('/order/sneaker-con', ['as' => 'order.sneaker.con', 'uses' => 'OrderController@getSneakerConForm']);
+$router->post('/order/sneaker-con', ['as' => 'order.sneaker.con', 'uses' => 'OrderController@postSneakerConForm']);
 
 /*
  * SHOE REQUEST

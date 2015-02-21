@@ -6,12 +6,16 @@ use Stripe\Charge;
 use Stripe\Error\Card;
 use Stripe\Stripe;
 use TGL\Commands\ShoeRequestCheckoutCommand;
+use TGL\Commands\ShoeRequestCommand;
+use TGL\Commands\SneakerConRequestCommand;
+use TGL\Commands\UserRegisterCommand;
 use TGL\Events\OrderPriceWasSet;
 use TGL\Http\Requests\AcceptOrderRequest;
 use TGL\Http\Requests\AddOrderPriceRequest;
 use TGL\Http\Requests\DeclineOrderRequest;
 use TGL\Http\Requests\ShoeRequestCheckoutRequest;
 use TGL\Http\Requests\ShoeRequestRequest;
+use TGL\Http\Requests\SneakerConRequest;
 use TGL\Orders\Services\OrderService;
 
 class OrderController extends Controller
@@ -245,6 +249,18 @@ class OrderController extends Controller
         $this->orderService->declineOrder($input['order_number']);
 
         //Flash::message('We're sorry to see that! Your order has been declined');
+
+        return redirect()->back();
+    }
+
+    public function getSneakerConForm()
+    {
+        return view('pages.sneaker-con');
+    }
+
+    public function postSneakerConForm(SneakerConRequest $request)
+    {
+        $this->dispatchFrom(SneakerConRequestCommand::class, $request);
 
         return redirect()->back();
     }

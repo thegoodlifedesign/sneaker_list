@@ -68,4 +68,26 @@ class UserRepository
 
         return $user;
     }
+
+    public function sneakerConOrder($command)
+    {
+        $this->model->username = $command->username;
+        $this->model->slug = $this->sluggify($command->username);
+        $this->model->email = $command->email;
+        $this->model->password = Hash::make($command->password);
+
+        $this->model->save();
+
+        $order = new Order([
+            'order_number' => rand(10000,99999),
+            'size' => $command->size,
+            'brand' => $command->brand,
+            'model' => $command->model,
+            'url' => $command->url,
+            'msg' => $command->message,
+            'status_id' => 1,
+        ]);
+
+        $this->model->orders()->save($order);
+    }
 }

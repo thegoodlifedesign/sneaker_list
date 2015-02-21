@@ -50,6 +50,19 @@ nav{
 .list-header-nav li a{
     color: #fff;
 }
+#sneakerConForm{
+    width: 76%;
+    margin-left: 12%;
+    padding: 1% 5% 15% 5%;
+    height: 907px;
+    background: #EDEDED;
+    border-radius: 10px;
+    margin-top: 50px;
+    border-top: solid 6px #ec1d24;
+    border-left: solid 1px #E0E0E0;
+    border-bottom: double 6px #E0E0E0;
+
+}
 
 /************************************/
 /* ADMIN SIDEBAR */
