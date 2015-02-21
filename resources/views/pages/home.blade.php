@@ -5,7 +5,7 @@
              <div class="row">
                  <div class="col l12">
                          <div id="homeTitle">
-                             <h1>Want. Request. Have.</h1>
+                             <h1>Want. Request. Receive.</h1>
                          </div>
 
                      <div class="type-wrap">
