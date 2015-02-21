@@ -85,6 +85,12 @@
       Stripe.setPublishableKey('pk_live_qk5xeN9lts3hKtA9Rg1Nzjdw');
       // ...
     </script>
+    <script>
+    $(document).ready(function(){
+        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+        $('.modal-trigger').leanModal();
+      });
+    </script>
     <script src="/static/js/shoe-request.js"></script>
     <script src="/static/js/carlos.js"></script>
     <script src="/static/js/shoutoutslider.js"></script>

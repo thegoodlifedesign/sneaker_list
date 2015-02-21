@@ -2,34 +2,7 @@
 
 @section('content')
 <div class="row">
-    <div class="col s2 no-padding">
-        <div id="userSidebar">
-            <div class="user-admin-info-wrapper">
-                <h2>Full Name:</h2>
-                <div class="user-admin-info">
-                    <h6>{{$user->full_name}}</h6>
-                </div>
-            </div>
-            <div class="user-admin-info-wrapper">
-                <h2>Username:</h2>
-                <div class="user-admin-info">
-                    <h6>{{$user->username}}</h6>
-                </div>
-            </div>
-            <div class="user-admin-info-wrapper">
-                <h2>Email:</h2>
-                <div class="user-admin-info">
-                    <h6>{{$user->email}}</h6>
-                </div>
-            </div>
-            <div class="user-admin-info-wrapper">
-                <h2>Address:</h2>
-                <div class="user-admin-info">
-                    <h6>{{$user->address}}, {{$user->city}}, {{$user->state}}</h6>
-                </div>
-            </div>
-        </div>
-    </div>
+    @include('partials.user-sidebar')
     <div class="col s10 no-padding">
         <div id="userBody">
             <div id="userInfo">

@@ -31,7 +31,7 @@ $router->get('/auth/sign-up', ['as' => 'sign.up', 'uses' => 'Auth\AuthController
 $router->get('/auth/logout', ['as' => 'logout', 'uses' => 'Auth\AuthController@getLogout']);
 $router->post('/auth/register', ['as' => 'register', 'uses' => 'Auth\AuthController@postRegister']);
 $router->post('/auth/login', ['as' => 'login', 'uses' => 'Auth\AuthController@postLogin']);
-
+$router->post('/user/add-details', ['as' => 'login', 'uses' => 'UserController@postAddDetails']);
 
 /*
  * ORDER

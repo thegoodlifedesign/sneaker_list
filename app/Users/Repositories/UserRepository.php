@@ -36,6 +36,18 @@ class UserRepository
         return $this->model;
     }
 
+    public function addDetails($user)
+    {
+        $db_user = $this->model->where('id', '=', $this->auth->user()->id)->first();
+
+        $db_user->full_name = $user->first_name." ".$user->last_name;
+        $db_user->address = $user->address;
+        $db_user->city = $user->city;
+        $db_user->state = $user->state;
+
+        $db_user->save();
+    }
+
     public function placeOrder($command)
     {
         $user = $this->model->where('id', '=', $this->auth->user()->id)->first();

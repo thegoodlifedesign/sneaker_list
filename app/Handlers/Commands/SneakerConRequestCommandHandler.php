@@ -15,7 +15,7 @@ class SneakerConRequestCommandHandler
 
 	/**
 	 * Create the command handler.
-	 *
+	 * @param UserRepository $userRepo
 	 */
 	public function __construct(UserRepository $userRepo)
 	{
@@ -25,8 +25,8 @@ class SneakerConRequestCommandHandler
 	/**
 	 * Handle the command.
 	 *
-	 * @param  SneakerConRequestCommand  $command
-	 * @return void
+	 * @param  SneakerConRequestCommand $command
+	 * @return \Illuminate\Http\RedirectResponse
 	 */
 	public function handle(SneakerConRequestCommand $command)
 	{
