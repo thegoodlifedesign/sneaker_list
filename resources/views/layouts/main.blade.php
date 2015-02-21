@@ -22,7 +22,7 @@
            <li><a href="/gallery">Gallery</a></li>
            <li><a href="/contact">Contact Us</a></li>
            @if(Auth::check())
-            <li><a href="/{{Auth::user()->slug}}/orders">Orders</a></li>
+            <li><a href="/{{Auth::user()->username}}/orders">Orders</a></li>
             <li><a href="/auth/logout">Logout</a></li>
            @else
             <li><a href="/auth/sign-up">Sign Up</a></li>
