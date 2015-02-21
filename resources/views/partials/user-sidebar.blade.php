@@ -47,7 +47,7 @@
         @if($user->full_name == "")
         <div class="user-admin-info-wrapper">
             <h2>Add Info:</h2>
-            <div class="user-admin-info">
+            <div class="">
                 <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Add Your Info!</a>
             </div>
         </div>
