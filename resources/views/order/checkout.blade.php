@@ -162,7 +162,7 @@ if($user->full_name !== "")
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="coupon" type="text" data-stripe="coupon">
+                                <input id="coupon" type="text" name="coupon">
                                 <label for="coupon">Coupon Code</label>
                             </div>
                         </div>
