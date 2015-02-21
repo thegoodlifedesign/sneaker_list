@@ -19,7 +19,7 @@ class OrderRepository
 
     public function getOrders()
     {
-        return $this->model->with('user')->get();
+        return $this->model->with('user')->latest()->get();
     }
 
     public function getOrder($order_number)
