@@ -166,7 +166,7 @@ if($user->full_name !== "")
                                 <label for="coupon">Coupon Code</label>
                             </div>
                         </div>
-                        <button class="btn waves-effect waves-light right" type="submit" name="action">Submit
+                        <button class="btn waves-effect waves-light right" type="submit" name="action" onclick="toast('Thank you for your order!', 6000)">Submit
                             <i class="mdi-content-send right"></i>
                         </button>
                     </form>
