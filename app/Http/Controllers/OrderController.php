@@ -41,9 +41,6 @@ class OrderController extends Controller
         $this->session = $session;
         $this->auth = $auth;
         $this->orderService = $orderService;
-
-        $this->middleware('auth', ['except' => 'getShoeRequest']);
-        $this->middleware('auth', ['except' => 'postShoeRequest']);
     }
 
     /**
