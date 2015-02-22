@@ -123,7 +123,7 @@ class OrderController extends Controller
             // Create the charge on Stripe's servers - this will charge the user's card
             try {
                 $charge = Charge::create(array(
-                        "amount" => 1400, // amount in cents, again
+                        "amount" => 1499, // amount in cents, again
                         "currency" => "usd",
                         "source" => $token,
                         "description" => "Shoe request")
