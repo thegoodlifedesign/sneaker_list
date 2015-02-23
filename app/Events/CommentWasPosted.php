@@ -1,7 +1,6 @@
 <?php namespace TGL\Events;
 
 use TGL\Comments\Comment;
-use TGL\Events\Event;
 
 use Illuminate\Queue\SerializesModels;
 
@@ -15,7 +14,7 @@ class CommentWasPosted extends Event {
 	 * @param Comment $comment
 	 * @return void
 	 */
-	public function __construct(Comment $comment)
+	public function __construct($comment)
 	{
 		$this->comment = $comment;
 	}

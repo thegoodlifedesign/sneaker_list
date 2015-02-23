@@ -26,7 +26,7 @@ class PostOrderCommentCommandHandler
 
         $db_comment = $this->commentRepo->addOrderComment($comment);
 
-        event(new CommentWasPosted($db_comment));
+       // event(new CommentWasPosted($db_comment));
 
         return $comment;
     }

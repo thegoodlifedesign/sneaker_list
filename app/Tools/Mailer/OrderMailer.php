@@ -18,15 +18,15 @@ class OrderMailer extends AbstractMailer
 
     public function sendNewComment($comment)
     {
-        if($comment->user->is_admin == 1)
+        if(1 == 1)
         {
             $this->sendTo(
-                $comment->user->email,
-                'New comment order #'.$comment->commentable,
+                'rodrigo@tgld.co',
+                'New comment order #'.
                 'emails.order.new-comment',
                 [
-                    'order_number' => $comment->commentable,
-                    'comment' => $comment->comment
+                    'order_number' => 6545,
+                    'comment' => 45
                 ]
             );
         }
@@ -34,10 +34,10 @@ class OrderMailer extends AbstractMailer
         {
             $this->sendTo(
                 getenv('ADMIN_EMAIL'),
-                'New comment order #'.$comment->commentable,
+                'New comment order #'.$comment->commentable->order_number,
                 'emails.order.new-comment',
                 [
-                    'order_number' => $comment->commentable,
+                    'order_number' => $comment->commentable->order_number,
                     'comment' => $comment->comment
                 ]
             );

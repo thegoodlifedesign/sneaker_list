@@ -29,7 +29,7 @@ class Email
 	 *
 	 * @param  CommentWasPosted  $event
 	 */
-	public function sendNewComment(CommentWasPosted $event)
+	public function sendNewComment($event)
 	{
 		$this->orderMailer->sendNewComment($event->comment);
 	}
