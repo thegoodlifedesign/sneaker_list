@@ -69,7 +69,9 @@ class UserRepository
             'status_id' => 1,
         ]);
 
-        $user->orders()->save($order);
+        $order = $user->orders()->save($order);
+
+        return $order;
     }
 
     public function getBySlug($slug)

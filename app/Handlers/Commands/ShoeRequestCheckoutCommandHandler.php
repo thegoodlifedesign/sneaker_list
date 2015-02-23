@@ -3,6 +3,7 @@
 use TGL\Commands\ShoeRequestCheckoutCommand;
 
 use Illuminate\Queue\InteractsWithQueue;
+use TGL\Tools\Mailer\OrderMailer;
 use TGL\Users\Repositories\UserRepository;
 
 class ShoeRequestCheckoutCommandHandler
@@ -10,9 +11,15 @@ class ShoeRequestCheckoutCommandHandler
 
 	protected $userRepo;
 
-	function __construct(UserRepository $userRepo)
+	/**
+	 * @var OrderMailer
+	 */
+	private $orderMailer;
+
+	function __construct(UserRepository $userRepo, OrderMailer $orderMailer)
 	{
 		$this->userRepo = $userRepo;
+		$this->orderMailer = $orderMailer;
 	}
 
 	/**
@@ -23,7 +30,9 @@ class ShoeRequestCheckoutCommandHandler
 	 */
 	public function handle(ShoeRequestCheckoutCommand $command)
 	{
-		$this->userRepo->placeOrder($command);
+		$order = $this->userRepo->placeOrder($command);
+
+		$this->orderMailer->sendNewOrder($order);
 	}
 
 }

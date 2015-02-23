@@ -25,7 +25,7 @@ class OrderMailer extends AbstractMailer
                 'New comment order #'.$comment->commentable->order_number,
                 'emails.order.new-comment',
                 [
-                    'order_number' => $comment->commentable,
+                    'order_number' => $comment->commentable->order_number,
                     'comment' => $comment->comment
                 ]
             );
@@ -34,13 +34,18 @@ class OrderMailer extends AbstractMailer
         {
             $this->sendTo(
                 getenv('ADMIN_EMAIL'),
-                'New comment order #'.$comment->commentable,
+                'New comment order #'.$comment->commentable->order_number,
                 'emails.order.new-comment',
                 [
-                    'order_number' => $comment->commentable,
+                    'order_number' => $comment->commentable->order_number,
                     'comment' => $comment->comment
                 ]
             );
         }
+    }
+
+    public function sendNewOrder($order)
+    {
+        dd($order);
     }
 }
