@@ -12,10 +12,10 @@
                             <a></a><h2><i class="fa fa-chevron-left"></i>User Info</h2>
                         </div>
                         <div class="row">
-                            <div class="col s2">
+                            <div class="col s3">
                                 <img src="http://placehold.it/250x250">
                             </div>
-                            <div class="col s10">
+                            <div class="col s9">
                                 <ul class="list-user-info">
                                     <li><strong>Username: </strong>{{$order->user->username}}</li>
                                     <li><strong>Full Name: </strong>{{$order->user->full_name}}</li>
