@@ -36,4 +36,14 @@ class Order extends Model
 		return $this->belongsTo('TGL\Orders\Entities\Status');
 	}
 
+	/**
+	 * Relationship between tasks and its comments
+	 *
+	 * @return \Illuminate\Database\Eloquent\Relations\HasMany
+	 */
+	public function comments()
+	{
+		return $this->morphMany('TGL\Comments\Comment', 'commentable');
+	}
+
 }

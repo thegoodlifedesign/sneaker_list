@@ -24,6 +24,9 @@ class EventServiceProvider extends ServiceProvider {
 		'TGL\Events\OrderWasDeclined' => [
 			'TGL\Handlers\Events\EmailConfirmation@sendAdminUserDeclined',
 		],
+		'TGL\Events\CommentWasPosted' => [
+			'TGL\Handlers\Events\Email@sendNewComment',
+		],
 	];
 
 	/**

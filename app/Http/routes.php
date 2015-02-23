@@ -1,6 +1,13 @@
 <?php
 
 /*
+ * COMMENTS
+ */
+$router->post
+('order/new-comment', ['as' => 'new.comment', 'uses' => 'CommentController@addOrderComment']);
+
+
+/*
  * PAGES
  */
 $router->get('/', ['as' => 'home', 'uses' => 'PagesController@getHome']);
