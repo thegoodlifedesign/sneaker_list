@@ -1,7 +1,6 @@
 @extends('layouts.main')
 
 @section('content')
-<?php dd($orders); ?>
 <div class="row">
     <div class="col s2 no-padding">
         <div id="adminSidebar">
