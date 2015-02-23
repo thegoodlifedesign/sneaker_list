@@ -4,14 +4,21 @@ use TGL\Comments\Comment;
 use TGL\Comments\Repositories\CommentRepository;
 use TGL\Events\CommentWasPosted;
 use TGL\Commands\PostOrderCommentCommand;
+use TGL\Tools\Mailer\OrderMailer;
 
 class PostOrderCommentCommandHandler
 {
     protected $commentRepo;
 
-    function __construct(CommentRepository $commentRepo)
+    /**
+     * @var OrderMailer
+     */
+    protected $orderMailer;
+
+    function __construct(CommentRepository $commentRepo, OrderMailer $orderMailer)
     {
         $this->commentRepo = $commentRepo;
+        $this->orderMailer = $orderMailer;
     }
 
     /**
@@ -26,7 +33,7 @@ class PostOrderCommentCommandHandler
 
         $db_comment = $this->commentRepo->addOrderComment($comment);
 
-       // event(new CommentWasPosted($db_comment));
+        $this->orderMailer->sendNewComment($db_comment);
 
         return $comment;
     }

@@ -31,7 +31,7 @@ class Email
 	 */
 	public function sendNewComment($event)
 	{
-		$this->orderMailer->sendNewComment($event->comment);
+		$this->orderMailer->sendNewComment($event);
 	}
 
 }
